@@ -1,0 +1,26 @@
+*, *:before, *:after {
+  /* 消除点击高亮效果 */
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+  /* 根据个人需求添加 */
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;/* 让字体变得平滑*/
+}
+
+*:focus {
+  /* 去除focus时候的边框 */
+  outline: 0;
+}
+
+input {
+  border-radius: 0;
+}
+
+html, body {
+  /* 禁止用户选择文本 */
+  user-select: none;
+  /* 截断长单词 */
+  word-break:break-all;
+}
