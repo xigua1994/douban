@@ -141,9 +141,206 @@ input {
         -webkit-border-radius:5px;
         background:#1caf8b;
         color:#ffffff;
-        right:10/@rem;
+        right:20/@rem;
       }
     }
     }
   }
+}
+#app .waiting{
+  text-align:center;
+  height:50/@rem;
+  line-height:50/@rem;
+  font-size:24/@rem;
+  color:#000000;
+  border:0;
+  margin:0;
+  width:100%;
+
+}
+/*影片详情*/
+.details{
+  .item_box{
+    width:100%;
+    display:block;
+    height:300/@rem;
+    .item_img{
+      width:206/@rem;
+      height:300/@rem;
+      img{
+        vertical-align:top;
+        width:206/@rem;
+        height:300/@rem;
+      }
+    }
+    .item_info{
+      width:(750-206)/@rem;
+      height:300/@rem;
+      box-sizing:border-box;
+      -webkit-box-sizing:border-box;
+      position:relative;
+      padding-left:15/@rem;
+      h4{
+        height:42/@rem;
+        line-height:42/@rem;
+        font-size:30/@rem;
+        color:#1caf8b;
+        text-align:left;
+        margin-top:12/@rem;
+      }
+      p{
+        height:42/@rem;
+        white-space:nowrap; 
+        text-overflow:ellipsis; 
+        -webkit-text-overflow:ellipsis;
+        -o-text-overflow:ellipsis; 
+        overflow:hidden;
+        overflow:hidden;
+        line-height:42/@rem;
+        font-size:30/@rem;
+        color:#1caf8b;
+        text-align:left;
+        margin-top:12/@rem;
+        font-size:0;
+        span{
+          font-size:24/@rem;
+        }
+        a{
+        display:inline-block;
+        font-size:24/@rem;
+        text-decoration:none;
+        color:#1caf8b
+        }
+      }
+      .score_num{
+        position:absolute;
+        top:16/@rem;
+        display:inline-block;
+        width:70/@rem;
+        height:30/@rem;
+        line-height:30/@rem;
+        text-align:center;
+        font-size:14/@rem;
+        border-radius:5px;
+        -webkit-border-radius:5px;
+        background:#1caf8b;
+        color:#ffffff;
+        right:20/@rem;
+      }
+    }
+  }
+  .item_detail{
+    .item_cast{
+      p{
+        margin-top:30/@rem;
+      height:46/@rem;
+      line-height:46/@rem;
+      margin-bottom:10/@rem;
+      }
+    }
+    .item_cast_box{
+      width:100%;
+      overflow:hidden;
+      li{ 
+        list-style:none;
+        width:240/@rem;
+        margin-right:2%;
+        :nth-of-type(3n){
+          margin-right:0;
+        }
+        .item_box{
+          display:block;
+          height:100%;
+        }
+        img{
+          vertical-align:top;
+          width:100%;
+          height:343/@rem;
+        }
+        p{
+          height:32/@rem;
+          line-height:32/@rem;
+          color:#000000;
+          font-size:28/@rem;
+          text-align:center;
+          text-decoration:0 !important;
+          margin-left:0;
+          white-space:nowrap;
+          overflow:hidden;
+        }
+        .small_p{
+          font-size:18/@rem;
+          height:24/@rem;
+          line-height:24/@rem;
+          color:#999999;
+        }
+      }
+      li:nth-of-type(3n){
+        margin-right:0;
+      }
+      li:nth-of-type(n+4){
+        margin-top:20/@rem;
+      }
+    }
+  }
+  footer{
+    p{
+      margin-top:30/@rem;
+      height:36/@rem;
+      line-height:36/@rem;
+    }
+    .footer_detail{
+      p{
+        margin-top:10/@rem;
+        color:#666666;
+        line-height:36/@rem;
+        font-size:24/@rem;
+        text-indent:2em;
+      }
+    }
+  }
+}
+/*艺人详情*/
+#celebrityDetails{
+margin-top:20/@rem;
+li{ 
+        list-style:none;
+        width:240/@rem;
+        margin-right:2%;
+        :nth-of-type(3n){
+          margin-right:0;
+        }
+        .item_box{
+          display:block;
+          height:100%;
+        }
+        img{
+          vertical-align:top;
+          width:100%;
+          height:343/@rem;
+        }
+        p{
+          height:32/@rem;
+          line-height:32/@rem;
+          color:#000000;
+          font-size:28/@rem;
+          text-align:center;
+          text-decoration:0 !important;
+          margin-left:0;
+          white-space:nowrap;
+          overflow:hidden;
+        }
+        .small_p{
+          font-size:18/@rem;
+          height:24/@rem;
+          line-height:24/@rem;
+          color:#999999;
+        }
+      }
+      li:nth-of-type(3n){
+        margin-right:0;
+      }
+      li:nth-of-type(n+4){
+        margin-top:20/@rem;
+      }
 }

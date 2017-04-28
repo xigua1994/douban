@@ -12,8 +12,9 @@
             <div class="item_info fl">
               <h4>{{item.title}}<i class="score_num">{{item.rating.average}}</i></h4>
               <p><span>类型：</span><span v-for="genre in item.genres">{{genre}}、</span></p>
-              <p><span>导演：</span><router-link v-for="director in item.directors" :to="`/celebrity/${director.id}`">{{director.name}}、</router-link></p>
-              <p><span>演员：</span><router-link v-for="cast in item.casts" :to="`/celebrity/${cast.id}`">{{cast.name}}、</router-link></p>
+              <p><span>导演：</span><router-link v-for="director in item.directors" :key="director.id" :to="`/celebrity/${director.id}`">{{director.name}}、</router-link></p>
+              <p><span>演员：</span><router-link v-for="cast in item.casts" :key="cast.id" :to="`/celebrity/${cast.id}`">{{cast.name}}、</router-link></p>
+              <p><span>{{item.year}}年作品</span></p>
             </div>
           </router-link><br>
           <div v-for="star in item.casts" style="float:left;width:20%">
@@ -66,7 +67,7 @@ export default {
         this.total = response.data.total;
         this.amount = this.start + this.count;
         if((this.count+this.start)>=this.total){
-          this.isNotEnd = true;
+          this.isNotEnd = false;
         }
       },(response)=>{
         this.error = {"msg":"回调失败"}
