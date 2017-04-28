@@ -5,7 +5,17 @@
     <div class="content" v-if="post" transition="expand">
       <ul>
         <li v-for="item in post" style="overflow:hidden">
-          <router-link :to="`/subject/${item.id}`">{{item.title}}</router-link><br>
+          <router-link :to="`/subject/${item.id}`" class="item_box">
+            <div class="item_img fl">
+              <img v-bind:src="item.images.large" v-bind:alt="item.title">
+            </div>
+            <div class="item_info fl">
+              <h4>{{item.title}}<i class="score_num">{{item.rating.average}}</i></h4>
+              <p><span>类型：</span><span v-for="genre in item.genres">{{genre}}、</span></p>
+              <p><span>导演：</span><router-link v-for="director in item.directors" :to="`/celebrity/${director.id}`">{{director.name}}、</router-link></p>
+              <p><span>演员：</span><router-link v-for="cast in item.casts" :to="`/celebrity/${cast.id}`">{{cast.name}}、</router-link></p>
+            </div>
+          </router-link><br>
           <div v-for="star in item.casts" style="float:left;width:20%">
              <router-link  :to="`/celebrity/${star.id}`">{{star.name}}
              </router-link>
@@ -46,16 +56,13 @@ export default {
       this.start = this.total = this.amount = 0
       var searchUrl
       this.url = this.$route.path.split("/")[1] ? this.$route.path.split("/")[1] : 'in_theaters'
-      console.log(this.url)
       if(this.url.indexOf("search")>-1){
         searchUrl = "https://api.douban.com/v2/movie/search?q="+this.$route.query.tag+'&count='+this.count+'&start='+this.start
       }else{
         searchUrl = 'https://api.douban.com/v2/movie/'+this.url+'?count='+this.count+'&start='+this.start
       }
-      console.log(this.$route.query.tag)
       this.$http.jsonp(searchUrl).then((response)=>{
         this.post = response.data.subjects;
-        console.log(response.data);
         this.total = response.data.total;
         this.amount = this.start + this.count;
         if((this.count+this.start)>=this.total){

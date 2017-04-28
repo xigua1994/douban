@@ -3,7 +3,6 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import ComingSoon from './components/ComingSoon'
 import VueResource from 'vue-resource'
 require("./assets/resize.js")
 Vue.use(VueResource)
