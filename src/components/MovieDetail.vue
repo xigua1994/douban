@@ -69,9 +69,9 @@ export default{
 	},
 	methods:{
 		fetchData (){
-			console.log(this.$route.params.id);
 			this.$http.jsonp('https://api.douban.com/v2/movie/subject/'+this.$route.params.id).then((response)=>{
 				this.post = response.data;
+				console.log(this.post);
 				this.loading = false;
 
 			},(response)=>{
